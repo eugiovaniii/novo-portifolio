@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Giovani Macedo</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="./index.js" defer=""></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <!-- Cabeçalho com título centralizado -->
+  <header class="bg-primary text-white text-center py-4">
+    <div class="container">
+      <h1>Bem-vindo ao Meu Portfólio</h1>
+      <p>Desenvolvedor Web | Criador de Soluções Digitais</p>
+    </div>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav class="nav justify-content-center bg-light py-3">
+    <a class="nav-link" href="#sobre">Sobre Mim</a>
+    <a class="nav-link" href="#projetos">Projetos</a>
+    <a class="nav-link" href="#habilidades">Habilidades</a>
+    <a class="nav-link" href="#contato">Contato</a>
+  </nav>
+
+  <!-- Corpo da página com containers -->
+  <main class="container mt-5">
+    <!-- Seção Sobre Mim -->
+    <div id="sobre" class="container bg-light p-4 mb-4">
+      <h2>Sobre Mim</h2>
+      <p>Olá! Meu nome é Giovani Macedo, sou um desenvolvedor web apaixonado por criar soluções digitais inovadoras.
+        Tenho experiência em HTML, CSS, JavaScript e frameworks como Bootstrap. Estou sempre em busca de novos desafios
+        e oportunidades para aprender e crescer.</p>
+    </div>
+
+    <!-- Seção Projetos -->
+    <div id="projetos" class="container bg-secondary text-white p-4 mb-4">
+      <h2>Projetos</h2>
+      <ul>
+        <li><strong>Projeto 1:O inicio de um Blog</strong></li><a href="/projetos/blog/index.html">clique aqui para visualizar</a>
+        <li><strong>Projeto 2:Sistema de Gerenciamento de Tarefas - Uma aplicação web para organizar tarefas diárias.</strong></li> <a href="/projetos/ger-tarefas/index.html">clique aqui para visualizar</a>
+        <li><strong>Projeto 3:O inicio de uma loja virtual</strong> </li> <a href="/projetos/Loja-Virtual/index.html">clique aqui para visualizar</a>
+        <li><strong>Projeto 4:Pagina de Viagens</strong></li> <a href="/projetos/pagina-viagem/index.html">clique aqui para visualizar</a>
+        <li><strong>Projeto 5: Portfólio Responsivo - Este site que você está visitando!</strong> </li>
+      </ul>
+    </div>
+
+    <!-- Seção Habilidades -->
+    <div id="habilidades" class="container bg-light p-4 mb-4">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML5, CSS3, JavaScript</li>
+        <li>Bootstrap, React</li>
+        <li>Versionamento com Git e GitHub</li>
+        <li>Design Responsivo</li>
+      </ul>
+    </div>
+
+    <!-- Seção Contato -->
+    <div id="contato" class="container bg-light p-4 mb-4">
+      <h2>Contato</h2>
+      <p>Entre em contato comigo através das redes sociais ou envie um e-mail para <a
+          href="mailto:giovanipmacedo@gmail.com">giovanipmacedo@gmail.com</a>.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="https://linkedin.com/in/eugiovaniii" target="_blank">LinkedIn</a></li>
+        <li class="list-inline-item"><a href="https://github.com/eugiovaniii" target="_blank">GitHub</a></li>
+        <li class="list-inline-item"><a href="https://twitter.com/eugiovaniii" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Rodapé com copyright -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p>Desenvolvido por Giovani Macedo © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script para atualizar o ano -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
