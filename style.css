@@ -120,3 +120,46 @@ footer p {
     font-size: 1.5rem;
   }
 }
+
+
+
+
+
+
+
+
+.projetos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projeto {
+  background-color: gray;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.projeto img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.projeto h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.projeto p {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.projeto a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
