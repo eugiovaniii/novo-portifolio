@@ -23,4 +23,3 @@ Este é o meu portfólio pessoal, desenvolvido para apresentar minhas habilidade
 
 1. Clone este repositório:
   
-(https://eugiovaniii.github.io/novo-portifolio-eugiovaniii/)
