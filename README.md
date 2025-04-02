@@ -21,5 +21,6 @@ Este é o meu portfólio pessoal, desenvolvido para apresentar minhas habilidade
 
 ## 🖥️ Como Visualizar o Projeto
 
-1. Clone este repositório:
+- clique no link abaixo:
   
+https://eugiovaniii.github.io/novo-portifolio/
