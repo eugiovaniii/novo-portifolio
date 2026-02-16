@@ -15,6 +15,40 @@ h1 {
   border-radius: 5px;
   box-sizing: border-box;
 }
+
+/* form container styling to keep elements inside viewport */
+#postForm {
+  /* display set only when visible below */
+  flex-direction: column;
+  width: calc(100% - 40px);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* explicitly hide when class hidden is present */
+#postForm.hidden {
+  display: none !important;
+}
+
+/* show flex when not hidden */
+#postForm:not(.hidden) {
+  display: flex;
+}
+
+/* desktop-specific form adjustments */
+body:not(.mobile-mode) #postForm {
+  max-width: 800px;
+  width: 60%;
+}
+
+body:not(.mobile-mode) #postTitle,
+body:not(.mobile-mode) #postContent {
+  font-size: 1.1rem;
+}
+
+#postForm button {
+  align-self: flex-end;
+}
 #postContent {
   height: 200px;
 }
@@ -79,7 +113,6 @@ main {
 #newPostBtn {
   position: fixed;
   right: 20px;
-  bottom: 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -90,6 +123,85 @@ main {
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: background-color 0.3s;
+  z-index: 1000; /* ensure it stays above footer */
+  bottom: 20px; /* default desktop placement */
+}
+
+/* move button to top in mobile-mode */
+body.mobile-mode #newPostBtn {
+  top: 20px;
+  bottom: auto;
+}
+
+body:not(.mobile-mode) #newPostBtn {
+  bottom: 20px;
+  top: auto;
+}
+
+/* container do controle de visualização */
+#viewToggleContainer {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* switch slider styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* estilo para simular visualização em tela de telefone */
+body.mobile-mode {
+  max-width: 375px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  background-color: #000;
+  height: 90vh;
+  overflow: auto;
 }
 
 #newPostBtn:hover {
@@ -100,6 +212,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 80px; /* espaço para botões fixos no topo */
 }
 
 header input#searchInput {
@@ -111,3 +224,12 @@ header input#searchInput {
   border-radius: 5px;
 }
 
+footer{
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  color: #000000;
+  margin-top: 40px; 
+
+
+}
