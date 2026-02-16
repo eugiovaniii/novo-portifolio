@@ -79,7 +79,7 @@ main {
 #newPostBtn {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 470ppx;
   background-color: #007bff;
   color: #fff;
   border: none;
