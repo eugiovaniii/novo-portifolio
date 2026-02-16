@@ -21,13 +21,21 @@ gravado no `localStorage`, de modo que sobrevive a recargas do navegador.
 ## Funcionalidades
 
 - feed de posts exibido em uma `div#postsContainer`;
-- botão flutuante (`#newPostBtn`) para mostrar/ocultar o formulário;
-- formulário reutilizável para criação (aparecimento dinâmico) e leitura
-  de título/conteúdo;
+- botão flutuante (`#newPostBtn`) no canto que alterna a visibilidade
+  do formulário e publica o post quando já está aberto;
+- formulário reutilizável para criação de posts com campos de título e
+  conteúdo, aparecendo dinamicamente e sendo ocultado automaticamente
+  após publicar;
 - pesquisa instantânea por título ou texto do post (`#searchInput`);
-- exclusão individual de publicações;
-- persistência de dados no `localStorage`;
-- estrutura CSS simples com regras para o feed e o botão fixo.
+- exclusão individual de publicações com botão “Apagar” em cada post;
+- alternância entre visualização mobile/desktop usando um controle tipo
+  slider no topo da página (o corpo recebe a classe `.mobile-mode` que
+  ajusta larguras, posição do botão e adiciona uma moldura simulando um
+  aparelho);
+- persistência de dados no `localStorage` para que os posts sobrevivam a
+  recargas do navegador;
+- layout responsivo e estilo simples com sombras, transições e regras CSS
+  para feed, cabeçalho e botão fixo.
 
 ## Estrutura de arquivos
 
@@ -77,12 +85,17 @@ gravado no `localStorage`, de modo que sobrevive a recargas do navegador.
 ## Como usar
 
 1. abra `index.html` no navegador (duplo‑clique ou via servidor local).
-2. clique no botão ✎ no canto para revelar o formulário.
-3. preencha “Título” e “Conteúdo” e clique em **Publicar**; o feed será
-   atualizado e o formulário ocultado.
-4. digite algo na caixa de busca para filtrar o feed em tempo real.
-5. use o botão “Apagar” em cada post para removê‑lo.
-6. os dados são mantidos no `localStorage`; feche/reabra o navegador e
+2. clique no botão ✎ no canto para revelar o formulário (ou, se já
+   aberto, publicar o conteúdo). O botão não é um submit separado, tudo
+   é feito nele para simplificar o fluxo mobile.
+3. preencha “Título” e “Conteúdo” e clique novamente no botão para
+   publicar; o feed será atualizado e o formulário ocultado.
+4. use o controle no topo para alternar entre a visualização “Mobile” e
+   “Desktop”; em modo mobile a interface é enquadrada e o botão muda de
+   posição.
+5. digite algo na caixa de busca para filtrar o feed em tempo real.
+6. use o botão “Apagar” em cada post para removê‑lo.
+7. os dados são mantidos no `localStorage`; feche/reabra o navegador e
    os posts permanecerão.
 
 ## Observações técnicas
