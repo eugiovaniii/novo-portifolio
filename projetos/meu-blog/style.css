@@ -77,7 +77,6 @@ main {
 
 /* botão “novo post” fixo no canto */
 #newPostBtn {
-  position: relative;
   right: 20px;
   bottom: 470px;
   background-color: #007bff;
