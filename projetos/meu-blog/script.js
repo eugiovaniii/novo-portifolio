@@ -43,31 +43,56 @@ function deletePost(index) {
   loadPosts();
 }
 
-// Evento de envio do formulário
-document.getElementById('postForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  let title = document.getElementById('postTitle').value;
-  let content = document.getElementById('postContent').value;
-  if (title && content) {
-      savePost(title, content);
-      loadPosts();
-      document.getElementById('postForm').reset();
-      document.getElementById('postForm').classList.add('hidden');
-  } else {
-      alert('Por favor, preencha todos os campos.');
-  }
-});
+// anterior envio via form foi substituído pelo botão único
 
 // Carregar os posts ao carregar a página
 window.onload = loadPosts;
 
-// alterna visibilidade do formulário ao clicar no botão
+// único botão: abre campos ou publica
 document.getElementById('newPostBtn').addEventListener('click', () => {
   const form = document.getElementById('postForm');
-  form.classList.toggle('hidden');
-  if (!form.classList.contains('hidden')) {
-    form.querySelector('#postTitle').focus();
+  const titleEl = document.getElementById('postTitle');
+  const contentEl = document.getElementById('postContent');
+  if (form.classList.contains('hidden')) {
+    form.classList.remove('hidden');
+    titleEl.focus();
+    // scroll to inputs in mobile view
+    setTimeout(() => {
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  } else {
+    const title = titleEl.value.trim();
+    const content = contentEl.value.trim();
+    if (title && content) {
+      savePost(title, content);
+      loadPosts();
+      titleEl.value = '';
+      contentEl.value = '';
+      form.classList.add('hidden');
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
   }
 });
 
 document.getElementById('searchInput').addEventListener('input', filterPosts);
+
+// alterna entre visualização mobile e desktop usando checkbox slider
+const viewToggle = document.getElementById('viewToggle');
+const viewLabel = document.getElementById('viewModeLabel');
+if (viewToggle && viewLabel) {
+  // iniciar em modo mobile com controle ligado
+  document.body.classList.add('mobile-mode');
+  viewToggle.checked = true; // checked = mobile
+  viewLabel.textContent = 'Mobile';
+
+  viewToggle.addEventListener('change', () => {
+    if (viewToggle.checked) {
+      document.body.classList.add('mobile-mode');
+      viewLabel.textContent = 'Mobile';
+    } else {
+      document.body.classList.remove('mobile-mode');
+      viewLabel.textContent = 'Desktop';
+    }
+  });
+}
